@@ -10,7 +10,7 @@ inteiro, informe que não é um número inteiro.
 #     num1 = int(num1)
 #     if num1 % 2 == 0:
 #         print("Número par!")
-#     elif num1 % 2 != 0:
+#     else:
 #         print("Número Impar!")
 
 # except Exception as e:
@@ -41,16 +41,18 @@ Faça um programa que peça o primeiro nome do usuário. Se o nome tiver 4 letra
 menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva 
 "Seu nome é normal"; maior que 6 escreva "Seu nome é muito grande". 
 """
+nome = input('Digite seu primeiro nome: ')
 
-# nome = input('Digite seu primeiro nome: ')
+try:
+    if len(nome) < 3: 
+       raise ValueError("Muito curto, mínimo 3 letras.")
 
-# try:
-#     if len(nome) < 5:
-#         print('Nome Curto')
-#     elif len(nome) in range(5,7):
-#        print('Nome Normal')
-#     else:
-#        print('Nome Grande')
+    if len(nome) < 5:
+        print('Nome Curto')
+    elif len(nome) in range(5,7):
+       print('Nome Normal')
+    else:
+       print('Nome Grande')
 
-# except Exception as e:
-#  print(f"Erro: {e}")
+except Exception as e:
+ print(f"Erro: {e}")
